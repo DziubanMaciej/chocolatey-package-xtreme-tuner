@@ -19,7 +19,9 @@ This package uses Autohotkey (AHK) by default to proceed with the installation, 
 ## Package parameters
 - `/noAutohotkey` - Run a normal silent installation, without AHK
 - `/installDir=<dir>` - Select installation directory. Does not work with `/noAutohotkey`
+
 ]]>
+    </description>
     <dependencies>
       <dependency id="7zip" />
       <dependency id="autohotkey.portable" />
