@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>xtreme-tuner</id>
+    <title>Xtreme Tuner</title>
+    <version>1.0.5.3</version>
+    <authors>Galax</authors>
+    <owners>mdziuban</owners>
+    <summary>Xtreme Tuner</summary>
+    <licenseUrl>https://www.galax.com/en/support</licenseUrl>
+    <projectUrl>https://www.kfa2.com/xtreme-tuner-plus-rtx</projectUrl>
+    <packageSourceUrl>TODOOOOOOOOOOOOOOO</packageSourceUrl>
+    <iconUrl>TODOOOOOOOOOOOOOO</iconUrl>
+    <tags>xtreme tuner galax kfa2 rtx nvidia gpu performance</tags>
+    <description><![CDATA[
+Xtreme Tuner is an application for users of NVIDIA RTX graphics cards sold by Galax (aka KFA2). It allows to control the clock speeds, RGB lights, fan speeds, creating custom fan curves and to monitor various metrics of the GPU.
+
+This package uses Autohotkey (AHK) by default to proceed with the installation, because the native installer doesn't offer a way to select installation directory.
+## Package parameters
+- `/noAutohotkey` - Run a normal silent installation, without AHK
+- `/installDir=<dir>` - Select installation directory. Does not work with `/noAutohotkey`
+]]>
+    <dependencies>
+      <dependency id="7zip" />
+      <dependency id="autohotkey.portable" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
