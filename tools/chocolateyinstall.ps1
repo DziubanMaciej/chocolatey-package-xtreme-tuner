@@ -8,7 +8,7 @@ if ($installDir -and $noAutohotkey) {
 }
 
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url = "https://www.kfa2.com/downloads/XtremeTuner(1.0.5.3).rar"
+$url = "https://www.kfa2.com/downloads/XtremeTuner_Android(1.0.5.8).rar"
 $rarPackage = "$toolsDir\" + ($url.split('/') | Select-Object -Last 1)
 $downloadArgs = @{
     PackageName  = $packageName

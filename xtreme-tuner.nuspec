@@ -3,14 +3,14 @@
   <metadata>
     <id>xtreme-tuner</id>
     <title>Xtreme Tuner</title>
-    <version>1.0.5.3</version>
+    <version>1.0.5.8</version>
     <authors>Galax</authors>
     <owners>mdziuban</owners>
     <summary>Xtreme Tuner</summary>
     <licenseUrl>https://www.galax.com/en/support</licenseUrl>
     <projectUrl>https://www.kfa2.com/xtreme-tuner-plus-rtx</projectUrl>
     <packageSourceUrl>https://github.com/DziubanMaciej/chocolatey-package-xtreme-tuner</packageSourceUrl>
-    <iconUrl>https://raw.githubusercontent.com/DziubanMaciej/chocolatey-package-xtreme-tuner/master/icon.png</iconUrl>
+    <iconUrl>https://cdn.statically.io/gh/DziubanMaciej/chocolatey-package-xtreme-tuner/91351497d90a3a87e18b66796750faadf965c7ea/icon.png</iconUrl>
     <tags>xtreme tuner galax kfa2 rtx nvidia gpu performance</tags>
     <description><![CDATA[
 Xtreme Tuner is an application for users of NVIDIA RTX graphics cards sold by Galax (aka KFA2). It allows to control the clock speeds, RGB lights, fan speeds, creating custom fan curves and to monitor various metrics of the GPU.
