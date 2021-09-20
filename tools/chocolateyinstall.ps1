@@ -6,17 +6,23 @@ $installDir = $packageParams.installDir
 if ($installDir -and $noAutohotkey) {
     throw "Cannot specify /installDir with /noAutohotkey"
 }
-
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $url = "https://www.kfa2.com/downloads/XtremeTuner_Android(1.0.5.8).rar"
 $rarPackage = "$toolsDir\" + ($url.split('/') | Select-Object -Last 1)
+
 $downloadArgs = @{
     PackageName  = $packageName
     FileFullPath = $rarPackage
     Url          = $url
 }
 Get-ChocolateyWebFile @downloadArgs
-7z e $rarPackage -aoa "-o$toolsDir"
+
+$unzipArgs = @{
+    PackageName  = $packageName
+    FileFullPath = $rarPackage
+    Destination  = $toolsDir
+}
+Install-ChocolateyZipPackage @unzipArgs
 
 $installArgs = @{
     PackageName    = $packageName
@@ -25,10 +31,10 @@ $installArgs = @{
     File           = "$toolsDir\XtremeTuner_Android.EXE"
     ValidExitCodes = @(0)
 }
-if ($installDir) {
-    Write-Host "Overriding installation path to $installDir"
-}
 if (-not $noAutohotkey) {
+    if ($installDir) {
+        Write-Host "Overriding installation path to $installDir"
+    }
     $installArgs.SilentArgs = ""
     $ahkFile = Join-Path $toolsDir "install.ahk"
     Write-Host "Running $ahkFile"

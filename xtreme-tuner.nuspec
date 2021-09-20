@@ -23,7 +23,6 @@ This package uses Autohotkey (AHK) by default to proceed with the installation, 
 ]]>
     </description>
     <dependencies>
-      <dependency id="7zip" />
       <dependency id="autohotkey.portable" />
     </dependencies>
   </metadata>
