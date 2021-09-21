@@ -11,18 +11,13 @@ $url = "https://www.kfa2.com/downloads/XtremeTuner_Android(1.0.5.8).rar"
 $rarPackage = "$toolsDir\" + ($url.split('/') | Select-Object -Last 1)
 
 $downloadArgs = @{
-    PackageName  = $packageName
-    FileFullPath = $rarPackage
-    Url          = $url
+    PackageName   = $packageName
+    Url           = "https://www.kfa2.com/downloads/XtremeTuner_Android(1.0.5.8).rar"
+    Checksum      = "1A78743A8B97318FB145059292F1C51BC2D87426C042186536C58697E957B125"
+    ChecksumType  = "sha256"
+    UnzipLocation = $toolsDir
 }
-Get-ChocolateyWebFile @downloadArgs
-
-$unzipArgs = @{
-    PackageName  = $packageName
-    FileFullPath = $rarPackage
-    Destination  = $toolsDir
-}
-Install-ChocolateyZipPackage @unzipArgs
+Install-ChocolateyZipPackage @downloadArgs
 
 $installArgs = @{
     PackageName    = $packageName
