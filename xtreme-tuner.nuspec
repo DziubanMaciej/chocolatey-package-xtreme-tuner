@@ -18,7 +18,7 @@ Xtreme Tuner is an application for users of NVIDIA RTX graphics cards sold by Ga
 This package uses Autohotkey (AHK) by default to proceed with the installation, because the native installer doesn't offer a way to select installation directory.
 ## Package parameters
 - `/noAutohotkey` - Run a normal silent installation, without AHK
-- `/installDir=<dir>` - Select installation directory. Does not work with `/noAutohotkey`
+- `/installDir=dir` - Select installation directory. Does not work with `/noAutohotkey`
 
 ]]>
     </description>
