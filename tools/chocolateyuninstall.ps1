@@ -10,8 +10,12 @@ $uninstallerPath = (Get-ItemProperty $uninstallerPath).UninstallString.split(' '
 $uninstallerPath = (Get-Item $uninstallerPath).FullName
 Write-Host "XtremeTuner uninstaller is $uninstallerPath"
 
-$ahkFile = Join-Path $toolsDir "uninstall.ahk"
-Write-Host "Running $ahkFile"
+$temporaryFolder = "$Env:Temp\$(Get-Random)"
+mkdir $temporaryFolder -Force
+Copy-Item (Join-Path $toolsDir "*.ahk") $temporaryFolder\
+$ahkFile = "$temporaryFolder\uninstall.ahk"
+
+Write-Host "Running AutoHotKey uninstall script for XtremeTuner: $ahkFile"
 $ahkProc = Start-Process -FilePath 'AutoHotKey' `
 					     -ArgumentList "`"$ahkFile`"" `
 					     -PassThru
@@ -24,3 +28,6 @@ $uninstallArgs = @{
     ValidExitCodes = @(0)
 }
 Uninstall-ChocolateyPackage @uninstallArgs
+
+Write-Host "Removing temporary folder $temporaryFolder"
+Remove-Item $temporaryFolder -Force -Recurse
